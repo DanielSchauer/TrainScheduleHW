@@ -39,14 +39,14 @@ var config = {
 
 
     
-  database.ref().push({
-    test:"hello",
-    Train : TrainName, 
-    working: "did it send?"
+  // database.ref().push({
+  //   test:"hello",
+  //   Train : TrainName, 
+  //   working: "did it send?"
+    
 
 
-
-   });
+  //  });
 
   // database.ref().on("value", function(snapshot) {
    // console.log(snapshot.val());
@@ -61,7 +61,7 @@ var config = {
     var dataArrival;
     var dataFrequency;
     
-    var TrainName = $("<tr>");
+    var trainRow = $("<tr>");
     var nameCol = $("<td>");
     dataName = snapshot.val().name;
     nameCol.text(dataName);
@@ -72,22 +72,19 @@ var config = {
     dataDate = snapshot.val().hired;
     startDateCol.text(dataDate);
     var monthsCol = $("<td>");
-   // var convertedDate = moment(dataDate, "YYYY-MM-DD");
-   // months = moment().diff(convertedDate,"months");
-   // monthsCol.text(months);
     var rateCol = $("<td>");
     dataRate = snapshot.val().rate;
     rateCol.text(dataRate);
     var totalCol = $("<td>");
-   // total = months * dataRate;
-   // totalCol.text(total);
-   // employeeRow.append(nameCol);
-    //employeeRow.append(roleCol);
-   // employeeRow.append(startDateCol);
-   // employeeRow.append(monthsCol);
-   // employeeRow.append(rateCol);
-   // employeeRow.append(totalCol);
-    // $("#employee-info").append(employeeRow);
+    //total = months * dataRate;
+    //totalCol.text(total);
+    trainRow.append(nameCol);
+    trainRow.append(roleCol);
+    trainRow.append(startDateCol);
+    trainRow.append(monthsCol);
+    trainRow.append(rateCol);
+    trainRow.append(totalCol);
+    
 });
 
 
